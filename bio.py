@@ -362,5 +362,12 @@ async def check_bio(client: Client, message):
     else:
         await reset_warnings(chat_id, user_id)
 
+import asyncio
+
 if __name__ == "__main__":
-    app.run()
+    async def main():
+        await app.start()
+        print("BioLink Protector Bot Started Successfully!")
+        await asyncio.Event().wait()  # keeps bot running forever
+
+    asyncio.run(main())
